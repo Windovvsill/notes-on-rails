@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export default () => (
-  <div className="layout">
-    <div className="site-layout-content" style={{ margin: "100px auto" }}>
-      <h1>Title</h1>
+export default () => {
+  const [s, setS] = useState();
+
+  useEffect(() => {});
+
+  return (
+    <div className="layout">
+      <div className="site-layout-content" style={{ margin: "100px auto" }}>
+        <h1>Title</h1>
+      </div>
+      <footer style={{ textAlign: "center" }}>foot..</footer>
     </div>
-    <footer style={{ textAlign: "center" }}>foot..</footer>
-  </div>
-);
+  );
+};
