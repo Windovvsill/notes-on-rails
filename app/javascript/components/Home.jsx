@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { NotesSuperLayout } from "./Notes";
 
 export default () => {
-  const [s, setS] = useState();
-
-  useEffect(() => {});
-
   return (
     <div className="layout">
-      <div className="site-layout-content" style={{ margin: "100px auto" }}>
-        <h1>Title</h1>
+      <div className="site-layout-content" style={{ margin: 0, padding: 0 }}>
+        <NotesSuperLayout />
       </div>
-      <footer style={{ textAlign: "center" }}>foot..</footer>
     </div>
   );
 };

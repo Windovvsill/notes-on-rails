@@ -1,6 +1,6 @@
 class Api::V1::NotesController < ApplicationController
     def index
-      @notes = Note.all
+      @notes = Note.order("notes.updated_at desc").all
       render json: @notes
     end
   
@@ -14,10 +14,10 @@ class Api::V1::NotesController < ApplicationController
     end
   
     def create
-      @note = Note.new(title: "...", body: "...")
+      @note = Note.new(title: "", body: "")
   
       if @note.save
-        redirect_to @note
+        render json: @note
       else
         render json: :new, status: :unprocessable_entity
       end
@@ -32,7 +32,7 @@ class Api::V1::NotesController < ApplicationController
       @note = Note.find(params[:id])
   
       if @note.update(note_params)
-        redirect_to @note
+        render json: @note
       else
         render json: :edit, status: :unprocessable_entity
       end
@@ -42,7 +42,7 @@ class Api::V1::NotesController < ApplicationController
       @note = Note.find(params[:id])
       @note.destroy
   
-      redirect_to root_path, status: :see_other
+      render json: @note
     end
   
     private

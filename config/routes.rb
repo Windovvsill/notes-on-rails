@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   # Can be replaced with ...
   # get 'notes', to: "notes#index"
   # get 'notes/:id', to: "notes#show"
-  # resources :notes
+  namespace :api do
+    namespace :v1 do
+      resources :notes
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

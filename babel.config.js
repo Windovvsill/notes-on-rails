@@ -36,6 +36,7 @@ module.exports = function (api) {
         },
       ],
       ["@babel/preset-react"],
+      ["@babel/preset-typescript"],
     ].filter(Boolean),
     plugins: [
       "babel-plugin-macros",
